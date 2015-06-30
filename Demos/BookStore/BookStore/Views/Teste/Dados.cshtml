@@ -1,0 +1,14 @@
+﻿@model BookStore.Domain.Autor
+@{
+    ViewBag.Title = "Dados";
+}
+
+<h2>Dados da view @Model.Nome</h2>
+
+    <ul>
+        <li>ViewBag: @ViewBag.Categoria</li>
+        <li>ViewData: @ViewData["Categoria"]</li>
+        <li>TempData: @TempData["Categoria"]</li>
+        <li>Session: @Session["Categoria"]</li>
+    </ul>
+
