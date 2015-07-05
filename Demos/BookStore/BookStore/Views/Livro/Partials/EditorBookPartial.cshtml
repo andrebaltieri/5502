@@ -1,0 +1,28 @@
+﻿@model BookStore.ViewModels.EditorBookViewModel
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Nome)
+    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.ISBN)
+    @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.DataLancamento)
+    @Html.EditorFor(model => model.DataLancamento, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.CategoriaId)
+    @Html.DropDownListFor(
+                    m => m.CategoriaId,
+                    Model.CategoriaOptions,
+                    "Selecione uma opção...",
+                    new { htmlAttributes = new { @class = "form-control" } })
+</div>
+
+@Html.EditorFor(x => x.Age)
+@Html.ValidationMessageFor(x => x.Age)

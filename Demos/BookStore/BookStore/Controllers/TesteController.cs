@@ -1,9 +1,12 @@
 ﻿using BookStore.Domain;
+using BookStore.Filters;
 using System;
 using System.Web.Mvc;
 
 namespace BookStore.Controllers
 {
+    [RoutePrefix("teste")]
+    [Route("{action=Dados}")]    
     public class TesteController : Controller
     {
         public ViewResult Dados(int Id)
@@ -44,5 +47,29 @@ namespace BookStore.Controllers
         {
             return Json(autor);
         }
+
+        [Route("minharota/{id:int}")]
+        public string MinhaAction(int id)
+        {
+            return "OK! Cheguei na rota!";
+        }
+
+        [Route("~/rotaignorada/{id:int}")]
+        public string MinhaAction2(int id)
+        {
+            return "OK! Cheguei na rota!";
+        }
+
+        [Route("rota/{categoria:alpha:minlength(3)}")]
+        public string MinhaAction3(string categoria)
+        {
+            return "OK! Cheguei na rota! " + categoria;
+        }
+
+        //[Route("rota4/{estacao:(primavera|verao|outono|inverno)}")]
+        //public string MinhaAction4(string estacao)
+        //{
+        //    return "Olá, estamos no " + estacao;
+        //}
     }
 }
